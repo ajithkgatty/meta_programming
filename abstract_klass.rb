@@ -4,6 +4,10 @@ class AbstractKlass
 	def welcome
 		puts "#{method1} ----------> #{method2}"
 	end 
+
+	def test1
+		p 'testing'
+	end
 end
 
 
@@ -17,9 +21,13 @@ class Definer < AbstractKlass
 
 	def method1; "Hello"; end;
 	def method2; "Everyone"; end;
+
+	def test2; p "test 2 test 2"; end;
 end
 
 
 
-Definer.new.welcome
+# Definer.new.welcome
+# AbstractKlass.new.welcome
 #Above code prints Hello -------------> Everyone
+Definer.new.send(:test2)
